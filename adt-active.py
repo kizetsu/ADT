@@ -8,12 +8,13 @@ def update(Tree):
     for treeItem in Tree:
         if Tree[treeItem]['setup'] == "multisite":
             print('cd '+Tree[treeItem]['path']+'; drush cc drush')
+#                os.system('cd '+Tree[treeItem]['path']+'; drush cc drush')
             for site in Tree[treeItem]['sites']:
-#                os.system()
-                print('cd '+Tree[treeItem]['path']+'; drush up --uri=', site)
+                print('cd '+Tree[treeItem]['path']+'; drush up --uri='+site)
+#                os.system('cd '+Tree[treeItem]['path']+'; drush up --uri='+site)
         else:
-            print('cd '+Tree[treeItem]['path']+'; drush cc drush')
             print('cd '+Tree[treeItem]['path']+'; drush up')
+#                os.system('cd '+Tree[treeItem]['path']+'; drush up')
 
 
 # Clear all cashes of all Drupals

@@ -93,15 +93,13 @@ def loadTree():
 def main():
     # load all needed files
     LogFile = loadLog()
-#    TreeFile = loadTree()
 #    # init actual Tree to check for updates
     iTree = initTree()
-#    writeTree(iTree)
+    writeTree(iTree)
     adt_active = __import__('adt-active')
     adt_active.update(iTree)
 #    # close opened Files
-#    TreeFile.close()
-#    LogFile.close()
+    LogFile.close()
 
 
 if __name__ == "__main__":
