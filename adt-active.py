@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
 
 import os
-#import sys
-#import json
-#import config
 
 
 # Update all Drupals
 def update(Tree):
     for treeItem in Tree:
-#        os.system('cd '+Tree[treeItem]['path']+';ls -la')
         if Tree[treeItem]['setup'] == "multisite":
             print('cd '+Tree[treeItem]['path']+'; drush cc drush')
             for site in Tree[treeItem]['sites']:
+#                os.system()
                 print('cd '+Tree[treeItem]['path']+'; drush up --uri=', site)
         else:
             print('cd '+Tree[treeItem]['path']+'; drush cc drush')
             print('cd '+Tree[treeItem]['path']+'; drush up')
+
+
+# Clear all cashes of all Drupals
+def clear(Tree):
+    for treeItem in Tree:
+        os.system('cd '+Tree[treeItem]['path']+'; drush cc all')
 
 
 ########################
