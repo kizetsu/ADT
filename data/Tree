@@ -1,0 +1,1 @@
+{"drupal-test-dir": {"setup": "multisite", "path": "/var/www/drupal-test-dir", "sites": ["test2.drupal.com", "test3.drupal.com", "test.drupal.com"]}, "drupal-test-dir2": {"setup": "singlesite", "path": "/var/www/drupal-test-dir2"}}
